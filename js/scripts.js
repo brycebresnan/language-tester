@@ -1,10 +1,9 @@
 window.addEventListener ("load", runOnLoad);
 
 function runOnLoad () {
-  // console.log(addQuestions(gatherFormData()));
   const form = document.getElementById("quiz");
-  form.addEventListener("submit", gatherFormData)
-
+  form.addEventListener("submit", gatherFormData);
+  
 }
 
 function gatherFormData (event) {
@@ -20,11 +19,37 @@ function gatherFormData (event) {
 
   console.log(score);
 
-  return score
+  score = scoreSorting(score);
+
+  console.log(score);
+
+  return score;
 }
 
 function scoreQuestions (q1, q2, q3, q4, q5) {
-  let score = q1 + q2 + q3 + q4 + q5
-  return score
+  let score = q1 + q2 + q3 + q4 + q5;
+  return score;
 }
 
+function scoreSorting (score) {
+  let match;
+  if (score === 20) {
+    match = "brainfuck";
+  }
+  else if (score < 20 && score >= 15) {
+    match = "rockstar";
+  }
+  else if (score < 15 && score >= 10) {
+    match = "velato";
+  }
+  else if (score < 10 && score >= 5) {
+    match = "trumpscript";
+  }
+  else if (score < 5) {
+    match = "chicken";
+  }
+  else {
+    match = "error";
+  }
+  return match;
+}
