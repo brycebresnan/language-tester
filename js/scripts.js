@@ -53,32 +53,37 @@ function scoreSorting (score) {
   }
   let finalResults = quizResults(match);
   return finalResults;
-
 }
 
 function quizResults (match) {
   let info;
+  
   if (match === "Brainf*CK") {
+    document.getElementById("resultsPre").innerText ="After running the numbers, we think your interests make you a perfect candidate for learning..."
     document.getElementById("resultsName").innerText = (match + "!");
     info = "This language is made to play with your mind - it is notoriously difficult to program in. Brainf*CK is not intended for practical use but to challenge and amuse programmers. This is a minimalistic language that uses only eight commands and an instruction pointer, each made up of a single character. Creator Urban Müller was still a physics student when he made this language (in 1993). Since then, this obscure language has reached almost a cult following. Let's see how a sample of the headache-inducing code that will print out 'Hello world!' looks like:\n\n++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.\n<<+++++++++++++++.>.+++.——.——–.>+.>.";
     document.getElementById("resultsInfo").innerText = info;
   }
   else if (match === "Rockstar") {
+    document.getElementById("resultsPre").innerText ="After running the numbers, we think your interests make you a perfect candidate for learning..."
     document.getElementById("resultsName").innerText = (match + "!");
     info = "How would you like to call yourself a rockstar programmer? ? It sounds excellent, and because of this joke programming language, it's possible to become one. Rockstar programming language is designed to create computer programs that are also song lyrics. One of the reasons Dylan Beattie made it is to stop recruiters and managers from referring to people as “rockstar programmers.” Now you can have a sticker on their laptop saying “CERTIFIED ROCKSTAR DEVELOPER.” That's rock'n'roll! Moreover, adding comments to Rockstar programs is strongly discouraged because it's up to the audience to find their own meaning. ";
     document.getElementById("resultsInfo").innerText = info;
   }
   else if (match === "Velato") {
+    document.getElementById("resultsPre").innerText ="After running the numbers, we think your interests make you a perfect candidate for learning..."
     document.getElementById("resultsName").innerText = (match + "!");
     info = "This exciting programming language uses MIDI files as source code: the pattern of notes determines commands. Programmer-musicians will love Velato because they can compose a musical piece that fills the constraints necessary to compile to a working Velato program. Each song has a secret message, and the program determines when it's compiled as Velato. So, let's make some music and code at the same time!";
     document.getElementById("resultsInfo").innerText = info;
   }
    else if (match === "TrumpScript") {
+    document.getElementById("resultsPre").innerText ="After running the numbers, we think your interests make you a perfect candidate for learning..."
     document.getElementById("resultsName").innerText = (match + "!");
     info = "It started as a joke that this is the programming language Trump would approve of - just as he is making America great again, owners hope that this language will make programming great. Although development on this project has stopped, owners want to send a strong message. They think that this joke isn’t funny anymore and want to influence people to actually do something about severe problems in the world. For example, you can donate to charity instead of spending your time beating the “Trump is ridiculous” meme to death.";
     document.getElementById("resultsInfo").innerText = info;
   }
   else if (match === "Chicken") {
+    document.getElementById("resultsPre").innerText ="After running the numbers, we think your interests make you a perfect candidate for learning..."
     document.getElementById("resultsName").innerText = (match + "!");
     info = "As crazy as this may sound, it's the truth - this language allows only one world, and this word is “chicken”! Swedish programmer and creator of this language, Torbjörn Söderstedt, was inspired after hearing Doug Zongker's parody of scientific speeches to make Chicken programming language. To write the whole code would take half the page and consist of nothing but the word 'chicken,' so here is just a piece of code:\n\nchicken chicken chicken chicken chicken chicken chicken chicken\nchicken chicken chicken\nchicken chicken chicken chicken chicken chicken";
     document.getElementById("resultsInfo").innerText = info;
