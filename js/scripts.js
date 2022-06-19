@@ -1,36 +1,12 @@
-window.addEventListener ("load", runOnLoad);
+//Business Logic
 
-function runOnLoad () {
-  const form = document.getElementById("quiz");
-  form.addEventListener("submit", gatherFormData);
-  
-}
-
-function gatherFormData (event) {
-  event.preventDefault();
-  const question1 = parseInt(document.querySelector("input[name='question1']:checked").value);
-  const question2 = parseInt(document.querySelector("input[name='question2']:checked").value);
-  const question3 = parseInt(document.querySelector("input[name='question3']:checked").value);
-  const question4 = parseInt(document.querySelector("input[name='question4']:checked").value);
-  const question5 = parseInt(document.querySelector("input[name='question5']:checked").value);
-  console.log(question5);
-
-  let score = scoreQuestions(question1, question2, question3, question4, question5);
-
-  console.log(score);
-
-  score = scoreSorting(score);
-
-  console.log(score);
-
-  return score;
-}
-
+//Adds question values together. Returns sum.
 function scoreQuestions (q1, q2, q3, q4, q5) {
   let score = q1 + q2 + q3 + q4 + q5;
   return score;
 }
 
+//scores results and returns a string with the name of the best match
 function scoreSorting (score) {
   let match;
   if (score === 20) {
@@ -51,13 +27,33 @@ function scoreSorting (score) {
   else {
     match = "error";
   }
-  let finalResults = quizResults(match);
-  return finalResults;
+  return match;
 }
 
+//User Interface Logic
+
+function sortingMachine(event) {
+  event.preventDefault();
+  let quizAnswers = scoreFormData();
+  let match = scoreSorting(quizAnswers);
+  quizResults(match);
+}
+
+//Gathers user input from checked radio box with associated int values, then adds scores and returns single int score.
+function scoreFormData () {
+  const question1 = parseInt(document.querySelector("input[name='question1']:checked").value);
+  const question2 = parseInt(document.querySelector("input[name='question2']:checked").value);
+  const question3 = parseInt(document.querySelector("input[name='question3']:checked").value);
+  const question4 = parseInt(document.querySelector("input[name='question4']:checked").value);
+  const question5 = parseInt(document.querySelector("input[name='question5']:checked").value);
+
+  let score = scoreQuestions(question1, question2, question3, question4, question5);
+  return score;
+}
+
+//sorts through score matches and inputs results strings into the appropraite html selector.
 function quizResults (match) {
   let info;
-  
   if (match === "Brainf*CK") {
     document.getElementById("resultsPre").innerText ="After running the numbers, we think your interests make you a perfect candidate for learning..."
     document.getElementById("resultsName").innerText = (match + "!");
@@ -94,3 +90,7 @@ function quizResults (match) {
   }
 }
 
+window.addEventListener ("load", function() {
+  const form = document.getElementById("quiz");
+  form.addEventListener("submit", sortingMachine); 
+})
