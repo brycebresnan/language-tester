@@ -12,3 +12,14 @@ img {
   max-width: 70%;
   height: auto;
 }
+
+.btn {
+  font-weight: bold;
+  background-color: rgb(163, 163, 163);
+}
+
+.btn:hover {
+  color: aliceblue;
+  background-color: rgb(28, 25, 25);
+}
+
