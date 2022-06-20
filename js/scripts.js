@@ -6,7 +6,7 @@ function scoreQuestions (q1, q2, q3, q4, q5) {
   return score;
 }
 
-//scores results and returns a string with the name of the best match
+//Scores results and returns a string with the name of the best match
 function scoreSorting (score) {
   let match;
   if (score === 20) {
@@ -83,7 +83,7 @@ function quizResults (match) {
   }
 }
 
-//calls functions in order to process user data and output score
+//calls functions in order to process user data into a result that is inputted to the results section. 
 function sortingMachine(event) {
   event.preventDefault();
   let quizAnswers = scoreFormData();
@@ -91,6 +91,7 @@ function sortingMachine(event) {
   quizResults(match);
 }
 
+//waiting to load DOM elements until after page loads to prevent errors.
 window.addEventListener ("load", function() {
   const form = document.getElementById("quiz");
   form.addEventListener("submit", sortingMachine); 
