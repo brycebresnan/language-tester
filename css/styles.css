@@ -17,10 +17,9 @@ h1 {
 }
 
 h4 {
-  font-weight: bold;
   font-size: 25px;
   padding: 10px;
-  color: rgb(255, 139, 45)
+  color: rgb(255, 139, 45);
 }
 
 img {
@@ -34,10 +33,14 @@ img {
 }
 
 .btn:hover {
-  color: aliceblue;
-  background-color: rgb(28, 25, 25);
+  color: rgb(48, 48, 48);
+  background-color: rgb(255, 139, 45);
 }
 
 hr {
   border-top: 1px solid rgba(255, 255, 255, 0.676);
+}
+
+#resultsName {
+  color: rgb(255, 139, 45);
 }
