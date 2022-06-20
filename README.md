@@ -19,7 +19,7 @@
 * Navigate to the top level of the directory.
 * Open index.html in Google Chrome.
 
-* Optional Link to GH-Pages: 
+* Optional Link to GH-Pages: https://brycebresnan.github.io/language-tester/
 
 ## Known Bugs
 
