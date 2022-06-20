@@ -32,13 +32,6 @@ function scoreSorting (score) {
 
 //User Interface Logic
 
-function sortingMachine(event) {
-  event.preventDefault();
-  let quizAnswers = scoreFormData();
-  let match = scoreSorting(quizAnswers);
-  quizResults(match);
-}
-
 //Gathers user input from checked radio box with associated int values, then adds scores and returns single int score.
 function scoreFormData () {
   const question1 = parseInt(document.querySelector("input[name='question1']:checked").value);
@@ -88,6 +81,14 @@ function quizResults (match) {
     errorMessage = "You forgot to answer a question! Please fill out all 5 answers and resubmit this quiz."
     document.getElementById("resultsName").innerText = errorMessage
   }
+}
+
+//calls functions in order to process user data and output score
+function sortingMachine(event) {
+  event.preventDefault();
+  let quizAnswers = scoreFormData();
+  let match = scoreSorting(quizAnswers);
+  quizResults(match);
 }
 
 window.addEventListener ("load", function() {
